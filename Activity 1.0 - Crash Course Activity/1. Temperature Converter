@@ -1,0 +1,65 @@
+#include<stdio.h>
+int main ()
+{
+    int temp, tempconv;
+    float cel, celtofahr, celtokel;
+    float fahr, fahrtocel, fahrtokel;
+    float kel, keltocel, keltofahr;
+    printf("Select temperature scale to be converted: ");
+    printf("\n [1] Celsius \n [2] Fahrenheit \n [3] Kelvin \n Choice: ");
+    scanf("%d", &temp);
+
+    switch(temp) {
+        case 1:
+        printf("\n Input temperature (°C): ");
+        scanf("%f", &cel);
+        printf("\n Select converted temperature scale: ");
+        printf("\n [1] Fahrenheit \n [2] Kelvin \n Choice: ");
+        scanf("%d", &tempconv);
+        if (tempconv==1) {
+            celtofahr = (cel * 9/5) + 32;
+            printf("\n %f °C = %f F \n", cel, celtofahr);
+        } else if (tempconv==2) {
+            celtokel = cel + 273.15;
+            printf("\n %f °C = %f K \n", cel, celtokel);
+        } else {
+            printf("\n Invalid input! \n"); }
+        break;
+
+        case 2:
+        printf("\n Input temperature (F): ");
+        scanf("%f", &fahr);
+        printf("\n Select converted temperature scale: ");
+        printf("\n [1] Celsius \n [2] Kelvin \n Choice: ");
+        scanf("%d", &tempconv);
+        if (tempconv==1) {
+            fahrtocel = (fahr - 32) * 5/9;
+            printf("\n %f F = %f °C \n", fahr, fahrtocel);
+        } else if (tempconv==2) {
+            fahrtokel = (fahr - 32) * 5/9 + 273.15;
+            printf("\n %f F = %f K \n", fahr, fahrtokel);
+        } else {
+            printf("\n Invalid input! \n"); }
+        break;
+
+        case 3:
+        printf("\n Input temperature (K): ");
+        scanf("%f", &kel);
+        printf("\n Select converted temperature scale: ");
+        printf("\n [1] Celsius \n [2] Fahrenheit \n Choice: ");
+        scanf("%d", &tempconv);
+        if (tempconv==1) {
+            keltocel = kel - 273.15;
+            printf("\n %f K = %f °C \n", kel, keltocel);
+        } else if (tempconv==2) {
+            keltofahr = (kel - 273.15) * 9/5 + 32;
+            printf("\n %f K = %f F \n", kel, keltofahr);
+        } else {
+            printf("\n Invalid input! \n"); }
+        break;
+
+        default:
+            printf("\n Invalid input! \n");
+    }
+    return 0;
+}
