@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main ()
+{
+    int a[10], i, n, sum=0;
+    printf("Enter the size of array: ");
+    scanf("%d", &n);
+
+    if (n>=5 && n<=10) {
+        for(i=0; i<n; i++) {
+        printf("\n Enter element %d: ", i+1);
+        scanf("%d", &a[i]);
+        sum += a[i];
+        }
+
+        printf("\n Sum of all array elements: %d \n", sum);
+
+    return 0;
+    }
+
+    else {
+        printf("\nArray size must be from 5 to 10\n");
+        return main(0);
+    }
+}
