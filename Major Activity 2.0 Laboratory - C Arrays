@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main ()
+{
+    int ID, PIN;
+    int user[3][2] = {{0113,1210}, {2334,7712}, {8765,3445}};
+    
+    printf("Enter ID Number: ");
+    scanf("%d", &ID);
+    printf("\nEnter PIN: ");
+    scanf("%d", &PIN);
+
+    for (int i=0; i<3; i++) 
+    {
+        if ((ID == user[i][0]) && (PIN == user[i][1])) {
+            printf("\n You have successfully logged in ID#: %d", ID); 
+        } else {
+            printf("\n Invalid ID/PIN!");
+        }
+        return 0;
+    } 
+return 0;
+}
