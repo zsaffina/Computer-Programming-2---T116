@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+    int num, i;
+    char words[50];
+    
+    printf("Input how many lines to be appended: ");
+    scanf("%d", &num);
+    
+    FILE *fptr;
+    fptr = fopen("C:\\text.txt","a");
+    
+    for (i=0; i<num; i++)
+    {
+        scanf("%s", words);
+        fprintf(fptr, "%s\n", words);
+    }
+    
+    fclose(fptr);
+    return 0;
+}
