@@ -1,0 +1,76 @@
+#include <stdio.h>
+float unitCons(float unit);
+float unitCharge(float unitcons);
+float surCharge(float unitcharge);
+float totalBill(float unitcharge, float surcharge);
+
+int main ()
+{
+    int ID;
+    float unit, unitcons, unitcharge, surcharge, total;
+    
+    printf("Customer ID: ");
+    scanf("%d", &ID);
+    printf("Unit Consumed: ");
+    scanf("%f", &unit);
+
+    unitcons = unitCons(unit);
+    unitcharge = unitCharge(unitcons);
+    surcharge = surCharge(unitcharge);
+    total = totalBill(unitcharge, surcharge);
+    
+    printf("\n--- Electricity Bill ---");
+    printf("\nCustomer ID: %d", ID);
+    printf("\nUnit Consumed: %.2f", unitcons);
+    printf("\nUnit Charges: %.2f", unitcharge);
+    printf("\nSurcharge: %.2f", surcharge);
+    printf("\nTotal Bill: %.2f", total);
+
+    return 0;
+}
+
+float unitCons(float unit) 
+{
+    float unitcons;
+    unitcons = unit;
+    return unitcons;
+}
+
+float unitCharge(float unitcons)
+{
+    float unitcharge;
+    
+    if (unitcons <= 198) {
+        unitcharge = (unitcons * 1.30);
+    } else if (unitcons >= 199 && unitcons <= 399) {
+        unitcharge = (unitcons * 1.50);
+    } else if (unitcons >= 400 && unitcons <= 449) {
+        unitcharge = (unitcons * 1.55);
+    } else if (unitcons >= 450 && unitcons <= 599) {
+        unitcharge = (unitcons * 1.85);
+    } else if (unitcons >= 600) {
+        unitcharge = (unitcons * 2);
+    }
+
+    return unitcharge;
+}
+
+float surCharge(float unitcharge)
+{
+    float surcharge;
+    if (unitcharge > 400) {
+        surcharge = (unitcharge * 0.10);
+    } else {
+        surcharge = 0;
+    }
+    
+    return surcharge;
+}
+
+float totalBill(float unitcharge, float surcharge)
+{
+    float total;
+    total = unitcharge + surcharge;
+    
+    return total;
+}
