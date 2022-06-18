@@ -1,0 +1,22 @@
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+    int base, exp, result;
+    printf("Enter X (base): ");
+    scanf("%d", &base);
+    printf("Enter Y (exponent): ");
+    scanf("%d", &exp);
+
+    if (exp > 0) {
+        result = pow(base, exp);
+        printf("%d ^ %d = %d", base, exp, result);
+    } else if (exp < 0) {
+        result = 1/pow(base, exp);
+        printf("%d ^ %d = 1/%d", base, exp, result);
+    } else if (exp == 0) {
+        printf("%d ^ %d = 1", base, exp);
+    }
+    
+    return 0;
+}
